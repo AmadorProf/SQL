@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+  <header class="page-header" role="banner">
+    <h1 class="project-name">
+      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    </h1>
+    <h2 class="project-tagline">{{ site.description }}</h2>
+  </header>
+
+  <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Mostrar módulos">
+    ☰ Módulos
+  </button>
+
+  <div class="site-body">
+
+    <nav class="sidebar" aria-label="Módulos del curso">
+      <p class="sidebar-home"><a href="{{ '/' | relative_url }}">↩ Inicio</a></p>
+      <ul>
+        {% assign page_filename = page.path | remove: ".md" %}
+        {% for mod in site.data.modules %}
+          <li{% if mod.filename == page_filename %} class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/{{ mod.filename }}">{{ mod.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <main class="page-content" role="main">
+
+      {{ content }}
+
+      {% assign modules = site.data.modules %}
+      {% assign page_filename = page.path | remove: ".md" %}
+      {% assign prev_mod = nil %}
+      {% assign next_mod = nil %}
+      {% assign found = false %}
+      {% for mod in modules %}
+        {% if found and next_mod == nil %}
+          {% assign next_mod = mod %}
+        {% endif %}
+        {% if mod.filename == page_filename %}
+          {% assign found = true %}
+        {% endif %}
+        {% unless found %}
+          {% assign prev_mod = mod %}
+        {% endunless %}
+      {% endfor %}
+
+      {% if found %}
+      <nav class="module-nav" aria-label="Navegación entre módulos">
+        {% if prev_mod %}
+          <a class="nav-btn nav-prev" href="{{ site.baseurl }}/{{ prev_mod.filename }}">← {{ prev_mod.title }}</a>
+        {% else %}
+          <span class="nav-placeholder"></span>
+        {% endif %}
+        <a class="nav-btn nav-index" href="{{ '/' | relative_url }}">↑ Índice</a>
+        {% if next_mod %}
+          <a class="nav-btn nav-next" href="{{ site.baseurl }}/{{ next_mod.filename }}">{{ next_mod.title }} →</a>
+        {% else %}
+          <span class="nav-placeholder"></span>
+        {% endif %}
+      </nav>
+      {% endif %}
+
+      <footer class="site-footer">
+        <a href="https://github.com/AmadorProf/SQL">{{ site.title }}</a> · GitHub Pages
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    document.querySelectorAll('.sidebar a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth < 768) {
+          document.querySelector('.sidebar').classList.remove('open');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
