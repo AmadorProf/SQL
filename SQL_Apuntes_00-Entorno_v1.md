@@ -100,7 +100,7 @@ Partir la consulta en varias líneas (una por cláusula) es buena costumbre desd
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones</summary>
 
 **00.1**
@@ -109,11 +109,15 @@ SELECT 1;
 ```
 Si devuelve `1`, el entorno funciona.
 
+---
+
 **00.2**
 ```sql
 SELECT 60 * 60 * 24 * 7;
 -- 604800
 ```
+
+---
 
 **00.3**
 ```sql
@@ -123,6 +127,8 @@ SELECT 'Ada' || ' ' || 'Lovelace';
 -- Versión portable a MariaDB/MySQL:
 SELECT CONCAT('Ada', ' ', 'Lovelace');
 ```
+
+---
 
 **00.4**
 ```sql

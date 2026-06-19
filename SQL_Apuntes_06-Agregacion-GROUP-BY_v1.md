@@ -162,7 +162,7 @@ Puedes ordenar por el alias de la agregación (`n`) o repetir la función (`ORDE
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones</summary>
 
 **06.1**
@@ -171,6 +171,8 @@ SELECT COUNT(*) AS total_clientes, COUNT(DISTINCT ciudad) AS ciudades FROM clien
 -- 6 clientes, 3 ciudades
 ```
 
+---
+
 **06.2**
 ```sql
 SELECT ROUND(AVG(precio),2) AS medio, MAX(precio) AS maximo, MIN(precio) AS minimo
@@ -178,10 +180,14 @@ FROM productos;
 -- medio 209.59, max 899, min 19.90
 ```
 
+---
+
 **06.3**
 ```sql
 SELECT categoria, COUNT(*) AS n FROM productos GROUP BY categoria;
 ```
+
+---
 
 **06.4**
 ```sql
@@ -191,10 +197,14 @@ GROUP BY categoria
 ORDER BY stock_total DESC;
 ```
 
+---
+
 **06.5**
 ```sql
 SELECT estado, COUNT(*) AS n FROM pedidos GROUP BY estado;
 ```
+
+---
 
 **06.6**
 ```sql
@@ -205,6 +215,8 @@ HAVING COUNT(*) >= 2;
 -- Madrid (3), Sevilla (2)
 ```
 
+---
+
 **06.7**
 ```sql
 SELECT categoria, ROUND(AVG(precio),2) AS medio
@@ -214,6 +226,8 @@ HAVING AVG(precio) > 50
 ORDER BY medio DESC;
 ```
 
+---
+
 **06.8**
 ```sql
 SELECT categoria, COUNT(*) AS n
@@ -222,6 +236,8 @@ WHERE precio > 30
 GROUP BY categoria
 HAVING COUNT(*) >= 2;
 ```
+
+---
 
 **06.9**
 ```sql

@@ -142,7 +142,7 @@ No hay una respuesta única. Escribe la versión que se entienda mejor y, si el 
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones</summary>
 
 **08.1**
@@ -152,6 +152,8 @@ WHERE precio > (SELECT AVG(precio) FROM productos);
 -- La media es ~209.59: Portátil (899) y Tablet (349) la superan
 ```
 
+---
+
 **08.2**
 ```sql
 SELECT nombre, precio FROM productos
@@ -159,11 +161,15 @@ WHERE precio = (SELECT MIN(precio) FROM productos);
 -- Ratón (19.90)
 ```
 
+---
+
 **08.3**
 ```sql
 SELECT nombre FROM clientes
 WHERE id IN (SELECT cliente_id FROM pedidos);
 ```
+
+---
 
 **08.4**
 ```sql
@@ -171,6 +177,8 @@ SELECT nombre FROM clientes AS c
 WHERE NOT EXISTS (SELECT 1 FROM pedidos AS p WHERE p.cliente_id = c.id);
 -- Iván
 ```
+
+---
 
 **08.5**
 ```sql
@@ -183,12 +191,16 @@ WHERE precio > (
 ```
 Para cada producto, la subconsulta calcula la media de su propia categoría y lo compara.
 
+---
+
 **08.6**
 ```sql
 SELECT c.nombre,
        (SELECT COUNT(*) FROM pedidos AS p WHERE p.cliente_id = c.id) AS num_pedidos
 FROM clientes AS c;
 ```
+
+---
 
 **08.7**
 ```sql
@@ -201,6 +213,8 @@ FROM (
 ) AS t
 WHERE unidades > 3;
 ```
+
+---
 
 **08.8**
 ```sql

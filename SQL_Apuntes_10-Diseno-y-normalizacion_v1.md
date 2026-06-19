@@ -111,7 +111,7 @@ Si ves "SCAN" recorre toda la tabla; si ves "SEARCH ... USING INDEX" está usand
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones</summary>
 
 **10.1** — La tabla repite `dni_alumno` en cada matrícula del mismo alumno y `profesor_curso` en cada matrícula del mismo curso: redundancia. Si un curso cambia de profesor, hay que actualizar muchas filas (anomalía de actualización). Normalizada:
@@ -122,11 +122,15 @@ matriculas (id PK, alumno_id FK, curso_id FK)
 ```
 Cada dato vive en un solo sitio: el profesor de un curso se cambia en una fila de `cursos`.
 
+---
+
 **10.2**
 ```sql
 CREATE INDEX idx_productos_categoria ON productos(categoria);
 ```
 Ayuda en consultas como `SELECT * FROM productos WHERE categoria = 'Periféricos'` y en los `GROUP BY categoria`, porque evita recorrer toda la tabla.
+
+---
 
 **10.3**
 ```sql
@@ -136,6 +140,8 @@ SELECT nombre, categoria, precio FROM productos WHERE precio > 100;
 SELECT * FROM productos_caros ORDER BY precio DESC;
 -- Portátil, Tablet, Monitor
 ```
+
+---
 
 **10.4**
 ```sql
@@ -148,6 +154,8 @@ GROUP BY pr.id;
 SELECT * FROM ventas_por_producto ORDER BY unidades DESC;
 ```
 
+---
+
 **10.5**
 ```sql
 EXPLAIN QUERY PLAN SELECT * FROM pedidos WHERE cliente_id = 1;
@@ -156,6 +164,8 @@ CREATE INDEX idx_pedidos_cliente ON pedidos(cliente_id);
 EXPLAIN QUERY PLAN SELECT * FROM pedidos WHERE cliente_id = 1;
 -- después: SEARCH pedidos USING INDEX idx_pedidos_cliente
 ```
+
+---
 
 **10.6** — Viola la 3FN porque `categoria_nombre` no depende del producto, sino de la categoría: es una dependencia transitiva (producto → categoría → nombre de categoría). El problema concreto: al renombrar una categoría ("Periféricos" → "Accesorios de entrada"), tendrías que actualizar todas las filas de productos de esa categoría, y si te dejas una, quedarían dos nombres para la misma categoría. Con una tabla `categorias` aparte, el nombre se cambia en una sola fila.
 

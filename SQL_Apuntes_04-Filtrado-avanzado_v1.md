@@ -152,7 +152,7 @@ Léela por partes: productos de dos categorías, con precio entre 20 y 80, cuyo 
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones</summary>
 
 **04.1**
@@ -160,11 +160,15 @@ Léela por partes: productos de dos categorías, con precio entre 20 y 80, cuyo 
 SELECT * FROM clientes WHERE ciudad IN ('Madrid', 'Sevilla');
 ```
 
+---
+
 **04.2**
 ```sql
 SELECT nombre, precio FROM productos WHERE precio BETWEEN 30 AND 200;
 -- Teclado (45), Monitor (199), Auriculares (79.90), Webcam (60)
 ```
+
+---
 
 **04.3**
 ```sql
@@ -172,11 +176,15 @@ SELECT nombre FROM clientes WHERE nombre LIKE 'M%' OR nombre LIKE 'J%';
 -- Marta, Juan
 ```
 
+---
+
 **04.4**
 ```sql
 SELECT nombre FROM productos WHERE nombre LIKE '%or%';
 -- Monitor, Cargador
 ```
+
+---
 
 **04.5**
 ```sql
@@ -186,6 +194,8 @@ ORDER BY fecha;
 -- pedidos 10, 11, 12, 14, 16
 ```
 
+---
+
 **04.6**
 ```sql
 SELECT nombre, fecha_alta FROM clientes
@@ -193,12 +203,16 @@ WHERE fecha_alta BETWEEN '2025-07-01' AND '2025-12-31';
 -- Eva (2025-09-05), Iván (2025-11-20)
 ```
 
+---
+
 **04.7**
 ```sql
 SELECT nombre, precio FROM productos
 WHERE categoria = 'Periféricos' AND precio > 40;
 -- Teclado (45), Webcam (60)
 ```
+
+---
 
 **04.8**
 ```sql

@@ -127,7 +127,7 @@ Vas a analizar la base de datos de la tienda de principio a fin, como haría un 
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones del proyecto</summary>
 
 **P1**

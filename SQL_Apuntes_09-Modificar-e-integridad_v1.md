@@ -134,7 +134,7 @@ Trabaja sobre una copia de la base de datos (o reejecuta el script al terminar).
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones</summary>
 
 **09.1**
@@ -143,10 +143,14 @@ UPDATE productos SET precio = 210 WHERE id = 4;
 SELECT * FROM productos WHERE id = 4;
 ```
 
+---
+
 **09.2**
 ```sql
 UPDATE pedidos SET estado = 'enviado', fecha = '2025-08-25' WHERE id = 13;
 ```
+
+---
 
 **09.3**
 ```sql
@@ -154,10 +158,14 @@ SELECT * FROM productos WHERE categoria = 'Informática';   -- Portátil y Table
 UPDATE productos SET precio = precio * 0.95 WHERE categoria = 'Informática';
 ```
 
+---
+
 **09.4**
 ```sql
 UPDATE pedidos SET estado = 'cancelado' WHERE estado = 'pendiente';
 ```
+
+---
 
 **09.5**
 ```sql
@@ -165,6 +173,8 @@ SELECT * FROM lineas_pedido WHERE producto_id = 5;   -- debe estar vacío
 DELETE FROM productos WHERE id = 5;
 ```
 La Webcam no aparece en ninguna línea de pedido, así que la clave foránea no bloquea el borrado.
+
+---
 
 **09.6**
 ```sql
@@ -175,6 +185,8 @@ ROLLBACK;
 SELECT stock FROM productos WHERE id = 8;   -- sigue siendo 300
 SELECT COUNT(*) FROM pedidos;               -- sigue siendo 7
 ```
+
+---
 
 **09.7**
 ```sql

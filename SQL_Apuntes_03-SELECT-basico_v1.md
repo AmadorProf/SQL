@@ -161,13 +161,15 @@ Un detalle que aclara muchas dudas: aunque escribes `SELECT` primero, la base de
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones</summary>
 
 **03.1**
 ```sql
 SELECT nombre, ciudad FROM clientes;
 ```
+
+---
 
 **03.2**
 ```sql
@@ -177,11 +179,15 @@ ORDER BY precio DESC;
 -- Portátil (899), Tablet (349), Monitor (199), Auriculares (79.90), Webcam (60)
 ```
 
+---
+
 **03.3**
 ```sql
 SELECT DISTINCT ciudad FROM clientes;
 -- Madrid, Sevilla, Bilbao
 ```
+
+---
 
 **03.4**
 ```sql
@@ -189,17 +195,23 @@ SELECT nombre, precio, precio * 1.21 AS precio_con_iva
 FROM productos;
 ```
 
+---
+
 **03.5**
 ```sql
 SELECT nombre, stock FROM productos ORDER BY stock DESC LIMIT 3;
 -- Cargador (300), Ratón (200), Teclado (120)
 ```
 
+---
+
 **03.6**
 ```sql
 SELECT * FROM pedidos WHERE estado <> 'entregado';
 -- los pedidos 12, 13, 15, 16
 ```
+
+---
 
 **03.7**
 ```sql
@@ -208,6 +220,8 @@ WHERE categoria = 'Periféricos'
 ORDER BY nombre;
 -- Ratón, Teclado, Webcam
 ```
+
+---
 
 **03.8**
 ```sql

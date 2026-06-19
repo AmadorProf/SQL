@@ -207,7 +207,7 @@ SQLite tiene un `ALTER TABLE` limitado (puede añadir y renombrar columnas, pero
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones</summary>
 
 **02.1**
@@ -219,11 +219,15 @@ CREATE TABLE categorias (
 INSERT INTO categorias (nombre) VALUES ('Informática'), ('Audio'), ('Periféricos');
 ```
 
+---
+
 **02.2**
 ```sql
 ALTER TABLE clientes ADD COLUMN email TEXT;
 ```
 No puedes ponerle `NOT NULL` de golpe porque las filas existentes quedarían con `email` vacío, lo que violaría la restricción. Primero rellenarías los emails y luego, si quieres, aplicarías la restricción. Una columna nueva `NOT NULL` necesita un `DEFAULT` para las filas que ya existen.
+
+---
 
 **02.3**
 ```sql
@@ -238,6 +242,8 @@ INSERT INTO empleados (nombre, salario) VALUES ('Luis', 1900);
 -- Luis queda en el departamento 'General' por defecto
 ```
 
+---
+
 **02.4**
 ```sql
 INSERT INTO productos (nombre, categoria, precio, stock)
@@ -245,6 +251,8 @@ VALUES ('Micrófono', 'Audio', 39.90, 40);
 SELECT * FROM productos WHERE nombre = 'Micrófono';
 -- Recibe el id 9 (el siguiente libre tras el 8)
 ```
+
+---
 
 **02.5**
 ```sql

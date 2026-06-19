@@ -121,12 +121,16 @@ Estos ejercicios son de diseño y comprensión, no de escribir SQL todavía. Res
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones</summary>
 
 **01.1** — Los nombres se repiten y pueden cambiar; un `id` es único e inmutable. Caso concreto: si hay dos clientes llamados "Ana García", al hacer un pedido "de Ana García" no sabrías a cuál de las dos asignarlo. Con `id` (1 y 2) no hay ambigüedad. Además, si una clienta cambia de apellido al casarse, su `id` sigue igual y no rompes las referencias de sus pedidos.
 
+---
+
 **01.2** — Es una relación **muchos a muchos**. Se representa con tres tablas: `alumnos`, `cursos` y una tabla intermedia `matriculas (alumno_id, curso_id, fecha)`. Cada fila de `matriculas` conecta a un alumno con un curso.
+
+---
 
 **01.3**
 ```
@@ -135,6 +139,8 @@ libros (id PK, titulo, autor, isbn)
 prestamos (id PK, socio_id FK, libro_id FK, fecha_prestamo, fecha_devolucion)
 ```
 Las claves foráneas van en `prestamos`: `socio_id` apunta a `socios.id` y `libro_id` a `libros.id`. Un préstamo conecta un socio con un libro. Es el patrón de tabla intermedia: un socio toma prestados muchos libros y un libro lo toman prestado muchos socios a lo largo del tiempo.
+
+---
 
 **01.4** — En SQLite usarías `REAL` o `NUMERIC`; en MariaDB, `DECIMAL(10,2)`. `DECIMAL` es preferible para dinero porque guarda el número exacto. `REAL` (coma flotante) puede introducir errores diminutos —el clásico `0.1 + 0.2 = 0.30000000000000004`— que en cálculos de dinero se acumulan y descuadran cuentas. `DECIMAL` no tiene ese problema.
 

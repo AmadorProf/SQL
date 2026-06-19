@@ -139,7 +139,7 @@ No te pases con el anidamiento: si una expresión se vuelve ilegible, suele conv
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones</summary>
 
 **05.1**
@@ -147,10 +147,14 @@ No te pases con el anidamiento: si una expresión se vuelve ilegible, suele conv
 SELECT UPPER(nombre) AS nombre, LENGTH(nombre) AS letras FROM clientes;
 ```
 
+---
+
 **05.2**
 ```sql
 SELECT nombre, ROUND(precio * 1.21, 2) AS precio_con_iva FROM productos;
 ```
+
+---
 
 **05.3**
 ```sql
@@ -158,11 +162,15 @@ SELECT nombre || ' - ' || ciudad AS etiqueta FROM clientes;
 -- En MariaDB: SELECT CONCAT(nombre, ' - ', ciudad) AS etiqueta FROM clientes;
 ```
 
+---
+
 **05.4**
 ```sql
 SELECT nombre, STRFTIME('%Y', fecha_alta) AS anio_alta FROM clientes;
 -- En MariaDB: SELECT nombre, YEAR(fecha_alta) AS anio_alta FROM clientes;
 ```
+
+---
 
 **05.5**
 ```sql
@@ -175,12 +183,16 @@ SELECT nombre, precio,
 FROM productos;
 ```
 
+---
+
 **05.6**
 ```sql
 SELECT id, estado,
        CASE WHEN estado IN ('enviado', 'pendiente') THEN 'Sí' ELSE 'No' END AS activo
 FROM pedidos;
 ```
+
+---
 
 **05.7**
 ```sql
@@ -190,6 +202,8 @@ SELECT
 FROM productos;
 -- con_stock: 7, sin_stock: 1 (la Webcam)
 ```
+
+---
 
 **05.8**
 ```sql

@@ -149,7 +149,7 @@ A veces una tabla se relaciona consigo misma (empleados con su jefe, categorías
 
 ---
 
-<details>
+<details markdown="1">
 <summary>Soluciones</summary>
 
 **07.1**
@@ -158,6 +158,8 @@ SELECT p.id, c.nombre, p.fecha, p.estado
 FROM pedidos AS p
 JOIN clientes AS c ON p.cliente_id = c.id;
 ```
+
+---
 
 **07.2**
 ```sql
@@ -168,12 +170,16 @@ WHERE p.estado = 'entregado';
 -- Ada (Madrid) x2, Juan (Bilbao)
 ```
 
+---
+
 **07.3**
 ```sql
 SELECT c.nombre, p.id AS pedido
 FROM clientes AS c
 LEFT JOIN pedidos AS p ON c.id = p.cliente_id;
 ```
+
+---
 
 **07.4**
 ```sql
@@ -184,12 +190,16 @@ WHERE p.id IS NULL;
 -- Iván
 ```
 
+---
+
 **07.5**
 ```sql
 SELECT pr.nombre, lp.cantidad, pr.precio
 FROM lineas_pedido AS lp
 JOIN productos AS pr ON lp.producto_id = pr.id;
 ```
+
+---
 
 **07.6**
 ```sql
@@ -198,6 +208,8 @@ SELECT lp.pedido_id, pr.nombre, lp.cantidad,
 FROM lineas_pedido AS lp
 JOIN productos AS pr ON lp.producto_id = pr.id;
 ```
+
+---
 
 **07.7**
 ```sql
@@ -210,6 +222,8 @@ GROUP BY c.id
 ORDER BY total DESC;
 -- Ada lidera (compró un portátil de 899 y más)
 ```
+
+---
 
 **07.8**
 ```sql
