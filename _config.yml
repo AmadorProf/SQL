@@ -1,0 +1,8 @@
+title: SQL desde cero hasta nivel avanzado
+description: Apuntes de SQL con SQLite para FP de grado superior — módulos 00–11
+theme: jekyll-theme-cayman
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
