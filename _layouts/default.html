@@ -8,30 +8,34 @@
 </head>
 <body>
 
-  <header class="page-header" role="banner">
-    <h1 class="project-name">
-      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    </h1>
-    <h2 class="project-tagline">{{ site.description }}</h2>
-  </header>
+  <!-- Sidebar fijo, ocupa toda la altura desde arriba -->
+  <nav class="sidebar" id="sidebar" aria-label="Módulos del curso">
+    <div class="sidebar-header">
+      <a class="sidebar-home" href="{{ '/' | relative_url }}">↩ Inicio</a>
+      <button class="sidebar-close-btn" onclick="toggleSidebar()" aria-label="Replegar menú" title="Replegar">‹</button>
+    </div>
+    <ul>
+      {% assign page_filename = page.path | remove: ".md" %}
+      {% for mod in site.data.modules %}
+        <li{% if mod.filename == page_filename %} class="active"{% endif %}>
+          <a href="{{ site.baseurl }}/{{ mod.filename }}">{{ mod.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
 
-  <button class="sidebar-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Mostrar módulos">
-    ☰ Módulos
-  </button>
+  <!-- Botón para abrir el menú cuando está replegado -->
+  <button class="sidebar-open-btn" id="sidebarOpenBtn" onclick="toggleSidebar()" aria-label="Abrir menú">☰</button>
 
-  <div class="site-body">
+  <!-- Contenido principal (se desplaza según el estado del sidebar) -->
+  <div class="site-main" id="siteMain">
 
-    <nav class="sidebar" aria-label="Módulos del curso">
-      <p class="sidebar-home"><a href="{{ '/' | relative_url }}">↩ Inicio</a></p>
-      <ul>
-        {% assign page_filename = page.path | remove: ".md" %}
-        {% for mod in site.data.modules %}
-          <li{% if mod.filename == page_filename %} class="active"{% endif %}>
-            <a href="{{ site.baseurl }}/{{ mod.filename }}">{{ mod.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
+    <header class="page-header" role="banner">
+      <h1 class="project-name">
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      </h1>
+      <h2 class="project-tagline">{{ site.description }}</h2>
+    </header>
 
     <main class="page-content" role="main">
 
@@ -77,13 +81,88 @@
   </div>
 
   <script>
-    document.querySelectorAll('.sidebar a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        if (window.innerWidth < 768) {
-          document.querySelector('.sidebar').classList.remove('open');
+    (function () {
+      var sidebar  = document.getElementById('sidebar');
+      var siteMain = document.getElementById('siteMain');
+      var openBtn  = document.getElementById('sidebarOpenBtn');
+      var SIDEBAR_W = 240;
+
+      function isMobile() { return window.innerWidth <= 768; }
+
+      function applyOpen() {
+        if (isMobile()) {
+          sidebar.classList.add('is-open');
+          sidebar.classList.remove('is-collapsed');
+          openBtn.style.display = 'none';
+        } else {
+          sidebar.classList.remove('is-collapsed');
+          siteMain.style.marginLeft = SIDEBAR_W + 'px';
+          openBtn.style.display = 'none';
+          localStorage.setItem('sb', '1');
+        }
+      }
+
+      function applyClose() {
+        if (isMobile()) {
+          sidebar.classList.remove('is-open');
+          sidebar.classList.add('is-collapsed');
+          openBtn.style.display = 'flex';
+        } else {
+          sidebar.classList.add('is-collapsed');
+          siteMain.style.marginLeft = '0';
+          openBtn.style.display = 'flex';
+          localStorage.setItem('sb', '0');
+        }
+      }
+
+      function isOpen() {
+        return isMobile()
+          ? sidebar.classList.contains('is-open')
+          : !sidebar.classList.contains('is-collapsed');
+      }
+
+      window.toggleSidebar = function () {
+        isOpen() ? applyClose() : applyOpen();
+      };
+
+      /* Estado inicial */
+      if (isMobile()) {
+        applyClose();
+      } else {
+        if (localStorage.getItem('sb') === '0') {
+          applyClose();
+        } else {
+          applyOpen();
+        }
+      }
+
+      /* Ajustar al redimensionar la ventana */
+      window.addEventListener('resize', function () {
+        if (isMobile()) {
+          siteMain.style.marginLeft = '0';
+          if (!sidebar.classList.contains('is-open')) {
+            sidebar.classList.add('is-collapsed');
+            openBtn.style.display = 'flex';
+          }
+        } else {
+          sidebar.classList.remove('is-open');
+          if (sidebar.classList.contains('is-collapsed')) {
+            siteMain.style.marginLeft = '0';
+            openBtn.style.display = 'flex';
+          } else {
+            siteMain.style.marginLeft = SIDEBAR_W + 'px';
+            openBtn.style.display = 'none';
+          }
         }
       });
-    });
+
+      /* Cerrar al hacer clic en un enlace del sidebar en móvil */
+      sidebar.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (isMobile()) applyClose();
+        });
+      });
+    })();
   </script>
 
 </body>
