@@ -12,7 +12,7 @@ Las soluciones están dentro de cada `.md`, plegadas al final (`<details>`). Int
 
 ## La base de datos de prácticas
 
-Casi todos los módulos usan la misma base de datos de ejemplo: una tienda con clientes, productos, pedidos y líneas de pedido. El script completo para crearla está en el módulo 02 y, copiado aparte, en el archivo `SQL_Apuntes_99-Script-BBDD_v1.sql`. Ejecútalo una vez y tendrás los datos listos para todos los ejercicios.
+Casi todos los módulos usan la misma base de datos de ejemplo: una tienda con clientes, productos, pedidos y líneas de pedido. El script completo para crearla está en el módulo 02 y, copiado aparte, en el archivo `SQL_Apuntes_99-Script-BBDD.sql`. Ejecútalo una vez y tendrás los datos listos para todos los ejercicios.
 
 ## Qué necesitas
 
@@ -28,18 +28,18 @@ Para los módulos finales sobre diseño y motor profesional, viene bien tener Ma
 
 | # | Archivo | Qué aprendes |
 |---|---------|--------------|
-| 00 | `..._00-Entorno_v1.md` | Qué es SQL, instalar SQLite, primera consulta |
-| 01 | `..._01-Modelo-relacional_v1.md` | Tablas, claves, relaciones, tipos de datos |
-| 02 | `..._02-Crear-y-poblar_v1.md` | `CREATE TABLE`, `INSERT`, la BBDD de prácticas |
-| 03 | `..._03-SELECT-basico_v1.md` | `SELECT`, `WHERE`, `ORDER BY`, `LIMIT`, `DISTINCT` |
-| 04 | `..._04-Filtrado-avanzado_v1.md` | `AND`/`OR`, `IN`, `BETWEEN`, `LIKE`, `NULL` |
-| 05 | `..._05-Funciones_v1.md` | Funciones de texto, número, fecha, `CASE` |
-| 06 | `..._06-Agregacion-GROUP-BY_v1.md` | `COUNT`, `SUM`, `AVG`, `GROUP BY`, `HAVING` |
-| 07 | `..._07-JOINs_v1.md` | `INNER`, `LEFT`, self-join, unir varias tablas |
-| 08 | `..._08-Subconsultas_v1.md` | Subconsultas, `IN`, `EXISTS`, correlacionadas |
-| 09 | `..._09-Modificar-e-integridad_v1.md` | `UPDATE`, `DELETE`, restricciones, transacciones |
-| 10 | `..._10-Diseno-y-normalizacion_v1.md` | Normalización, índices, vistas |
-| 11 | `..._11-Window-functions-y-proyecto_v1.md` | Funciones de ventana, CTEs, proyecto final |
+| 00 | `..._00-Entorno.md` | Qué es SQL, instalar SQLite, primera consulta |
+| 01 | `..._01-Modelo-relacional.md` | Tablas, claves, relaciones, tipos de datos |
+| 02 | `..._02-Crear-y-poblar.md` | `CREATE TABLE`, `INSERT`, la BBDD de prácticas |
+| 03 | `..._03-SELECT-basico.md` | `SELECT`, `WHERE`, `ORDER BY`, `LIMIT`, `DISTINCT` |
+| 04 | `..._04-Filtrado-avanzado.md` | `AND`/`OR`, `IN`, `BETWEEN`, `LIKE`, `NULL` |
+| 05 | `..._05-Funciones.md` | Funciones de texto, número, fecha, `CASE` |
+| 06 | `..._06-Agregacion-GROUP-BY.md` | `COUNT`, `SUM`, `AVG`, `GROUP BY`, `HAVING` |
+| 07 | `..._07-JOINs.md` | `INNER`, `LEFT`, self-join, unir varias tablas |
+| 08 | `..._08-Subconsultas.md` | Subconsultas, `IN`, `EXISTS`, correlacionadas |
+| 09 | `..._09-Modificar-e-integridad.md` | `UPDATE`, `DELETE`, restricciones, transacciones |
+| 10 | `..._10-Diseno-y-normalizacion.md` | Normalización, índices, vistas |
+| 11 | `..._11-Window-functions-y-proyecto.md` | Funciones de ventana, CTEs, proyecto final |
 
 ## Ruta recomendada
 

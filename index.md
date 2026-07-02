@@ -16,7 +16,7 @@ Las soluciones están dentro de cada módulo, plegadas al final (`<details>`). I
 
 ## La base de datos de prácticas
 
-Casi todos los módulos usan la misma base de datos de ejemplo: una tienda con clientes, productos, pedidos y líneas de pedido. El script completo está en el módulo 02 y también en el archivo [`SQL_Apuntes_99-Script-BBDD_v1.sql`](https://github.com/AmadorProf/SQL/blob/main/SQL_Apuntes_99-Script-BBDD_v1.sql). Ejecútalo una vez y tendrás los datos listos para todos los ejercicios.
+Casi todos los módulos usan la misma base de datos de ejemplo: una tienda con clientes, productos, pedidos y líneas de pedido. El script completo está en el módulo 02 y también en el archivo [`SQL_Apuntes_99-Script-BBDD.sql`](https://github.com/AmadorProf/SQL/blob/main/SQL_Apuntes_99-Script-BBDD.sql). Ejecútalo una vez y tendrás los datos listos para todos los ejercicios.
 
 ## Qué necesitas
 
@@ -30,18 +30,18 @@ Una de estas opciones, de menos a más esfuerzo:
 
 | # | Módulo | Qué aprendes |
 |---|--------|--------------|
-| 00 | [Entorno](SQL_Apuntes_00-Entorno_v1) | Qué es SQL, instalar SQLite, primera consulta |
-| 01 | [Modelo relacional](SQL_Apuntes_01-Modelo-relacional_v1) | Tablas, claves, relaciones, tipos de datos |
-| 02 | [Crear y poblar](SQL_Apuntes_02-Crear-y-poblar_v1) | `CREATE TABLE`, `INSERT`, la BBDD de prácticas |
-| 03 | [SELECT básico](SQL_Apuntes_03-SELECT-basico_v1) | `SELECT`, `WHERE`, `ORDER BY`, `LIMIT`, `DISTINCT` |
-| 04 | [Filtrado avanzado](SQL_Apuntes_04-Filtrado-avanzado_v1) | `AND`/`OR`, `IN`, `BETWEEN`, `LIKE`, `NULL` |
-| 05 | [Funciones](SQL_Apuntes_05-Funciones_v1) | Funciones de texto, número, fecha, `CASE` |
-| 06 | [Agregación y GROUP BY](SQL_Apuntes_06-Agregacion-GROUP-BY_v1) | `COUNT`, `SUM`, `AVG`, `GROUP BY`, `HAVING` |
-| 07 | [JOINs](SQL_Apuntes_07-JOINs_v1) | `INNER`, `LEFT`, self-join, unir varias tablas |
-| 08 | [Subconsultas](SQL_Apuntes_08-Subconsultas_v1) | Subconsultas, `IN`, `EXISTS`, correlacionadas |
-| 09 | [Modificar e integridad](SQL_Apuntes_09-Modificar-e-integridad_v1) | `UPDATE`, `DELETE`, restricciones, transacciones |
-| 10 | [Diseño y normalización](SQL_Apuntes_10-Diseno-y-normalizacion_v1) | Normalización, índices, vistas |
-| 11 | [Window functions y proyecto](SQL_Apuntes_11-Window-functions-y-proyecto_v1) | Funciones de ventana, CTEs, proyecto final |
+| 00 | [Entorno](SQL_Apuntes_00-Entorno) | Qué es SQL, instalar SQLite, primera consulta |
+| 01 | [Modelo relacional](SQL_Apuntes_01-Modelo-relacional) | Tablas, claves, relaciones, tipos de datos |
+| 02 | [Crear y poblar](SQL_Apuntes_02-Crear-y-poblar) | `CREATE TABLE`, `INSERT`, la BBDD de prácticas |
+| 03 | [SELECT básico](SQL_Apuntes_03-SELECT-basico) | `SELECT`, `WHERE`, `ORDER BY`, `LIMIT`, `DISTINCT` |
+| 04 | [Filtrado avanzado](SQL_Apuntes_04-Filtrado-avanzado) | `AND`/`OR`, `IN`, `BETWEEN`, `LIKE`, `NULL` |
+| 05 | [Funciones](SQL_Apuntes_05-Funciones) | Funciones de texto, número, fecha, `CASE` |
+| 06 | [Agregación y GROUP BY](SQL_Apuntes_06-Agregacion-GROUP-BY) | `COUNT`, `SUM`, `AVG`, `GROUP BY`, `HAVING` |
+| 07 | [JOINs](SQL_Apuntes_07-JOINs) | `INNER`, `LEFT`, self-join, unir varias tablas |
+| 08 | [Subconsultas](SQL_Apuntes_08-Subconsultas) | Subconsultas, `IN`, `EXISTS`, correlacionadas |
+| 09 | [Modificar e integridad](SQL_Apuntes_09-Modificar-e-integridad) | `UPDATE`, `DELETE`, restricciones, transacciones |
+| 10 | [Diseño y normalización](SQL_Apuntes_10-Diseno-y-normalizacion) | Normalización, índices, vistas |
+| 11 | [Window functions y proyecto](SQL_Apuntes_11-Window-functions-y-proyecto) | Funciones de ventana, CTEs, proyecto final |
 
 ## Ruta recomendada
 
