@@ -84,7 +84,7 @@ INSERT INTO clientes (nombre, ciudad, fecha_alta) VALUES
 
 ## El script completo de la tienda
 
-Copia y ejecuta esto entero en tu herramienta. Crea las cuatro tablas y las llena. Es la base de datos que usarán todos los ejercicios del curso (también lo tienes suelto en `SQL_Apuntes_99-Script-BBDD_v1.sql`).
+Copia y ejecuta esto entero en tu herramienta. Crea las cuatro tablas y las llena. Es la base de datos que usarán todos los ejercicios del curso (también lo tienes suelto en `SQL_Apuntes_99-Script-BBDD.sql`).
 
 ```sql
 PRAGMA foreign_keys = ON;
