@@ -1,7 +1,19 @@
 ---
 ---
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+/* Paleta "esquema": índigo/pizarra, titulares en monoespaciada como una tabla */
+$header-bg-color: #253858;
+$header-bg-color-secondary: #3b5a8a;
+$section-headings-color: #30496e;
+$body-link-color: #30496e;
+
 @import "jekyll-theme-cayman";
+
+h1, h2, h3, .project-name {
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
 
 /* ─────────────────────────────────────────
    Sidebar — fijo, altura completa
@@ -14,8 +26,8 @@
   height: 100vh;
   z-index: 100;
   overflow-y: auto;
-  background: #f8fafb;
-  border-right: 1px solid #e4e8ec;
+  background: #f2f4f8;
+  border-right: 1px solid #dde3ec;
   font-size: 0.82rem;
   transition: transform 0.28s ease;
 
@@ -41,14 +53,14 @@
       border-radius: 4px;
 
       &:hover {
-        background: #e8f5e9;
-        color: #159957;
+        background: #eef1f7;
+        color: #30496e;
       }
     }
 
     &.active > a {
-      background: #d4edda;
-      color: #155724;
+      background: #dbe3f0;
+      color: #1d2f4a;
       font-weight: 700;
     }
   }
@@ -60,15 +72,15 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.65rem 0.5rem 0.65rem 1.25rem;
-  border-bottom: 1px solid #e4e8ec;
-  background: #f1f3f4;
+  border-bottom: 1px solid #dde3ec;
+  background: #e9edf3;
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
 .sidebar-home {
-  color: #159957;
+  color: #30496e;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.82rem;
@@ -94,9 +106,9 @@
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 
   &:hover {
-    background: #e8f5e9;
-    color: #159957;
-    border-color: #159957;
+    background: #eef1f7;
+    color: #30496e;
+    border-color: #30496e;
   }
 }
 
@@ -121,9 +133,9 @@
   transition: background 0.15s, border-color 0.15s;
 
   &:hover {
-    background: #e8f5e9;
-    border-color: #159957;
-    color: #159957;
+    background: #eef1f7;
+    border-color: #30496e;
+    color: #30496e;
   }
 }
 
@@ -162,7 +174,7 @@
 ───────────────────────────────────────── */
 details {
   margin: 2em 0;
-  border: 1px solid #b2dfdb;
+  border: 1px solid #cdd7e8;
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
@@ -172,8 +184,8 @@ details {
 details summary {
   display: block;
   padding: 0.75em 1.1em;
-  background: linear-gradient(135deg, #e0f2f1, #f1f8e9);
-  color: #00695c;
+  background: linear-gradient(135deg, #eef1f7, #e4ecf7);
+  color: #1d2f4a;
   font-weight: 700;
   font-size: 0.88rem;
   letter-spacing: 0.05em;
@@ -193,13 +205,13 @@ details summary::before {
   font-size: 0.65em;
   margin-right: 0.55em;
   vertical-align: middle;
-  color: #26a69a;
+  color: #4d7ea8;
   transition: transform 0.2s ease;
 }
 
 details[open] > summary {
-  border-bottom-color: #b2dfdb;
-  background: linear-gradient(135deg, #d0efec, #e8f5e9);
+  border-bottom-color: #cdd7e8;
+  background: linear-gradient(135deg, #dbe3f0, #eef1f7);
 }
 
 details[open] > summary::before { transform: rotate(90deg); }
@@ -238,9 +250,9 @@ details code { font-size: 0.88em; }
 .nav-btn {
   display: inline-block;
   padding: 0.5rem 1rem;
-  border: 2px solid #159957;
+  border: 2px solid #30496e;
   border-radius: 6px;
-  color: #159957;
+  color: #30496e;
   text-decoration: none;
   font-size: 0.82rem;
   font-weight: 700;
@@ -248,7 +260,7 @@ details code { font-size: 0.88em; }
   white-space: nowrap;
 
   &:hover {
-    background: #159957;
+    background: #30496e;
     color: #fff;
     text-decoration: none;
   }
@@ -268,7 +280,7 @@ details code { font-size: 0.88em; }
   text-align: center;
 
   a { color: #bbb; text-decoration: none; }
-  a:hover { color: #159957; }
+  a:hover { color: #30496e; }
 }
 
 /* ─────────────────────────────────────────
