@@ -39,7 +39,9 @@
 
     <main class="page-content" role="main">
 
-      {{ content }}
+      <div class="main-content">
+        {{ content }}
+      </div>
 
       {% assign modules = site.data.modules %}
       {% assign page_filename = page.path | remove: ".md" %}
