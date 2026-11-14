@@ -1,6 +1,10 @@
 title: SQL desde cero hasta nivel avanzado
 description: Apuntes de SQL con SQLite para FP de grado superior — módulos 00–11
 theme: jekyll-theme-cayman
+remote_theme: AmadorProf/jekyll-tema-apuntes
+github_repo: AmadorProf/SQL
+plugins:
+  - jekyll-remote-theme
 defaults:
   - scope:
       path: ""
